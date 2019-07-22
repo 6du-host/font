@@ -5,8 +5,7 @@ import traceback
 
 ROOT = dirname(abspath(__file__))
 @Fire
-def main(cssFile):
-  outName="html"
+def main(outName, cssFile):
   cd @(ROOT)
   
   li = $(cat @(cssFile)|grep url)
