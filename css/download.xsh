@@ -35,8 +35,8 @@ with open(join(ROOT,cssFile)) as f:
     i=i.strip()
     if "url(" in i:
       url = line_url(i)
-      i = i.replace(url, "./woff2/"+filemap[url])
+      i = i.replace(url, "\"~@/file/font/css/woff2/"+filemap[url]+'"')
     outLi.append(i.replace(fontFamily, outName))
 
-with open(join(ROOT,outName+".css"),"w") as f:
+with open(join(ROOT,outName+".styl"),"w") as f:
   f.write("\n".join(outLi))
